@@ -3,6 +3,7 @@ import PostList1 from './PostList1'
 import PostList2 from './PostList2'
 import CreatePost from './CreatePost'
 import PostListPaginated from './PostListPaginated'
+import PostListInfinite from './PostListInfinite'
 import { useState } from 'react'
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
       </button>
       <button
         onClick={() => setCurrentPage(<PostListPaginated />)}>
+        Post List paginated
+      </button>
+      <button
+        onClick={() => setCurrentPage(<PostListInfinite />)}>
         Post List paginated
       </button>
       <br />
