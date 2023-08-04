@@ -1,14 +1,24 @@
-import { useQuery } from "@tanstack/react-query"
-import { getPosts } from "./api/posts"
-import Post from './types/Post'
+import { useQuery, useQueries } from "@tanstack/react-query"
+import { getPost, getPosts } from "./api/posts"
+// import Post from './types/Post'
 
 export default function PostList1() {
-  const postsQuery = useQuery<Post[]>({
+  const postsQuery = useQuery({
     queryKey: ["posts"],
     queryFn: getPosts,
     // staleTime: 1000 * 60 * 5,
     // refetchInterval: 1000,
   })
+
+  const queries = useQueries({
+    queries: (postsQuery?.data ?? []).map(post =>  {
+    return {
+      queryKey: ["post", post.id],
+      queryFn: () => getPost(post.id),
+    }
+  })})
+
+  console.log(queries.map(query => query.data))
 
   if (postsQuery.isLoading) return <h1>Loading...</h1>
   if (postsQuery.isError) {
