@@ -5,6 +5,12 @@ export function getPosts() {
     .then((response) => response.json());
 }
 
+export function getPostsPaginated(page: number = 1, limit: number = 10) {
+  const url = `${POST_URL}?_page=${page}&_limit=${limit}`;
+  return fetch(url)
+    .then((response) => response.json());
+}
+
 export function getPost(id:number) {
   return fetch(POST_URL + "/" + id)
     .then((response) => response.json());
