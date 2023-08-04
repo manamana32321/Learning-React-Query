@@ -1,6 +1,7 @@
 import Post from './Post'
 import PostList1 from './PostList1'
 import PostList2 from './PostList2'
+import CreatePost from './CreatePost'
 import { useState } from 'react'
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
       <button
         onClick={() => setCurrentPage(<Post id={1} />)}>
           First Post
+      </button>
+      <button
+        onClick={() => setCurrentPage(<CreatePost setCurrentPage={setCurrentPage} />)}>
+        New Post
       </button>
       <br />
       {currentPage}

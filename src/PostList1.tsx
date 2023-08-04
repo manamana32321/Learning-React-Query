@@ -7,7 +7,7 @@ export default function PostList1() {
     queryKey: ["posts"],
     queryFn: getPosts,
     // staleTime: 1000 * 60 * 5,
-    refetchInterval: 1000,
+    // refetchInterval: 1000,
   })
 
   if (postsQuery.isLoading) return <h1>Loading...</h1>

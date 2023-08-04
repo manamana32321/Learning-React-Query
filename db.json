@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server1",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "json-server2",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "title": "json-server3",
+      "userId": 3
+    },
+    {
+      "title": "4",
+      "body": "44",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "5",
+      "body": "55",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "ㅇ",
+      "body": "ㅇㅇㅇㅇ",
+      "userId": 1,
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "user1"
+    }
+  ]
+}

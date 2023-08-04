@@ -1,4 +1,6 @@
+import { USER_URL } from ".";
+
 export function getUser(id:number) {
-  return fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+  return fetch(USER_URL + "/" + id)
     .then((response) => response.json());
 }
